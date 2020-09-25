@@ -3,7 +3,7 @@ This project's goal is to connect a drone with a flight simulator so that it can
 ## Group Members
 Name | Role
 ------------- | ------------- 
-Luke Rogers   |  A nice guy             
+Luke Rogers   |  Python Scripter             
 Matthew Drain |  A nice guy
 Jack Fouch  | Another nice person
 asdasda | Another nice person
