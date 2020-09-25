@@ -6,4 +6,4 @@ Name | Role
 Luke Rogers   |  Python Scripter             
 Matthew Drain |  Python Scripter
 Jack Fouch  | Another nice person
-asdasda | Another nice person
+Aaron Friedlein | Another nice person
