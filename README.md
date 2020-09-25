@@ -5,5 +5,5 @@ Name | Role
 ------------- | ------------- 
 Luke Rogers   |  A nice guy             
 Matthew Drain |  A nice guy
-asdasd  | Another nice person
+Jack Fouch  | Another nice person
 asdasda | Another nice person
