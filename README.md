@@ -16,3 +16,4 @@ Anyone who enjoys flight simulators and drones
 4. Utilizes SimTools
 5. Obstacle Course implemented in real life to fly through
 ## Installation
+Implemented with Parrot AR 2.0 drone and a MaxFlight Motion Simulator. Built in partnership with Dr. Redei and Central Michigan University. 
