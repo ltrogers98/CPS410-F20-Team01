@@ -4,6 +4,6 @@ This project's goal is to connect a drone with a flight simulator so that it can
 Name | Role
 ------------- | ------------- 
 Luke Rogers   |  Python Scripter             
-Matthew Drain |  A nice guy
+Matthew Drain |  Python Scripter
 Jack Fouch  | Another nice person
 asdasda | Another nice person
