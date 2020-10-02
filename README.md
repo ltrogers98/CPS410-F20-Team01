@@ -5,8 +5,8 @@ Name | Role
 ------------- | ------------- 
 Luke Rogers   |  Python Scripter             
 Matthew Drain |  Python Scripter
-Jack Fouch  | Another nice person
-Aaron Friedlein | Another nice person
+Jack Fouch  | Python Scripter
+Aaron Friedlein | Python Scripter
 ## Key Users
 Anyone who enjoys flight simulators and drones
 ## 5 Key Features
