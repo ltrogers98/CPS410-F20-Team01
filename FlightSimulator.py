@@ -21,7 +21,7 @@ end = False
 
 ###UDP Packet Sender###
 #Create a socket
-sock = socket.socket(socket.AF_INET, socket.SOCK_FGRAM, 0)
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, 0)
 
 
 
