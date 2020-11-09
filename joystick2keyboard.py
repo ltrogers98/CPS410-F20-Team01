@@ -43,11 +43,11 @@ while(run):
     will be slept for the second longest. Sleep times are as follows:
     --------------------------------------------------------
     |Absolute value of largest intput  |     Sleep time    |
-    |             0.8                  |       .2s         |
-    |             0.6                  |       .15s         |
-    |             0.4                  |       .1s         |
-    |             0.2                  |       .05s         |
-    |            <0.2                  |       .025s         |
+    |             >=0.8                |       .2s         |
+    |             >=0.6                |       .15s        |
+    |             >=0.4                |       .1s         |
+    |             >=0.2                |       .05s        |
+    |              <0.2                |       .025s       |
     --------------------------------------------------------
     """
     if abs(x) < 0.2 and abs(y) < 0.2:
