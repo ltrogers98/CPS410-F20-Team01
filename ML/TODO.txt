@@ -1,0 +1,35 @@
+Algorithm 1: Learning from images of human piloting. At each time unit,
+1) Modify key reading to record last key pressed
+2) Record screenshots from Parrot visual data (how to take stills from video?)
+-a) Pair each screenshot with the key pressed
+-b) Save the pairs to a file
+-c) Repeat as people drive around the course
+3) Train a Convolutional Neural Network to learn the key presses from the pictures
+4) Send parsed video feed to the base computer (or onboard computer)
+5) Base computer processes the image through the model
+6) Base computer sends key press to the drone
+7) Prepare manual override for landing
+
+Additional Options
+1) Group the images into 5 image sequences with the key press of the last image at the end
+2) Balance the dataset by having an equal portion of examples of each key press
+3) Incorporate alternative sensory inputs (Such as raw telemetry) 
+4) Add object detection to the image inputs
+
+----------------------------------------------------------------------------------------------------------
+
+Algorithm 2: Adapting a baseline model for the course.
+1) Download an existing algorithm for following a digital map
+2) Model the obstacle course
+3) Use a pathfinding algorithm to determine an optimal path through the course
+4) Deploy the algorithm to travel the course
+
+Additional Options
+1) Employ evolutionary learning to optomize performance (Big downside, could theoretically crash. Simple Greedy Algorithm described)
+-a) Start the existing algorithm
+-b) Drive around the course and record key presses at each time interval along the course and the time for a lap
+-c) Make a small random change to the recorded key presses
+-d) Travel the course with the new key presses and record the new lap time
+-e) If the new time is better, keep the changes. Otherwise, keep the old algorithm
+-f) Repeat steps a-e for as long as manageable
+2) Tune the algorithm to the course using Algorithm 1
