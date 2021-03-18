@@ -1,16 +1,15 @@
 ##### Suggested clean drone startup sequence #####
 import time, sys
-import ps_drone  # Import PS-Drone-API
+import ps_drone3  # Import PS-Drone-API
 import socket
 import sys
 
-drone = ps_drone.Drone()  # Start using drone
+drone = ps_drone3.Drone()  # Start using drone
 drone.startup()  # Connects to drone and starts subprocesses
 
 drone.reset()  # Sets drone's status to good (LEDs turn green when red)
 while (drone.getBattery()[0] == -1):  time.sleep(0.1)  # Wait until the drone has done its reset
-print
-"Battery: " + str(drone.getBattery()[0]) + "%  " + str(drone.getBattery()[1])  # Gives a battery-status
+print("Battery: " + str(drone.getBattery()[0]) + "%  " + str(drone.getBattery()[1]))  # Gives a battery-status
 drone.useDemoMode(False)  # Give me everything...fast
 drone.getNDpackage(["demo", "pressure_raw", "altitude", "magneto", "wifi"])  # Packets, which shall be decoded
 time.sleep(1.0)  # Give it some time to awake fully after reset
@@ -41,15 +40,15 @@ while not end:
     while drone.NavDataCount == NDC:  time.sleep(0.001)  # Wait until next time-unit
     key = drone.getKey()
     NDC = drone.NavDataCount
-    print "-----------"
-    print "Aptitude [X,Y,Z] :            " + str(drone.NavData["demo"][2])
+    print("-----------")
+    print("Aptitude [X,Y,Z] :            " + str(drone.NavData["demo"][2]))
     #Assign data to be sent to the Telemetry data
     send_data = str(drone.NavData["demo"][2])
     sock.sendto(send_data.encode('utf-8'), ("169.50.50.3", 4123))
     print("Info sent")
    # print "Altitude / sensor / pressure: " + str(drone.NavData["altitude"][3]) + " / " + str(drone.State[21]) + " / " + str(drone.NavData["pressure_raw"][0])
-    print "Megnetometer [X,Y,Z]:         " + str(drone.NavData["magneto"][0])
-    print "Wifi link quality:            " + str(drone.NavData["wifi"])
+    print("Megnetometer [X,Y,Z]:         " + str(drone.NavData["magneto"][0]))
+    print("Wifi link quality:            " + str(drone.NavData["wifi"]))
     if key == " ":
         if drone.NavData["demo"][0][2] and not drone.NavData["demo"][0][3]:
             drone.takeoff()
@@ -61,7 +60,6 @@ while not end:
         drone.hover()
     elif key == "w":
         drone.moveForward()
-	drone.stop()
 
     elif key == "s":
         drone.moveBackward()
