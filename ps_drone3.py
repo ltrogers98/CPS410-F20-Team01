@@ -52,7 +52,7 @@ class Drone(object):
 		self.stopOnComLoss = 	False				# when there is a communication-problem, drone will land or not
 
 		# Drone communication variables
-		self.DroneIP = 		"192.168.1.1"
+		self.DroneIP = 		os.getenv("DRONE_IP", default="192.168.1.1")
 		self.NavDataPort = 	5554
 		self.VideoPort = 	5555
 		self.CmdPort = 		5556

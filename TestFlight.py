@@ -3,6 +3,7 @@ import time, sys
 import ps_drone3  # Import PS-Drone-API
 import socket
 import sys
+import os
 
 drone = ps_drone3.Drone()  # Start using drone
 drone.startup()  # Connects to drone and starts subprocesses
@@ -44,7 +45,7 @@ while not end:
     print("Aptitude [X,Y,Z] :            " + str(drone.NavData["demo"][2]))
     #Assign data to be sent to the Telemetry data
     send_data = str(drone.NavData["demo"][2])
-    sock.sendto(send_data.encode('utf-8'), ("169.50.50.3", 4123))
+    sock.sendto(send_data.encode('utf-8'), (os.getenv("SIMULATOR_IP", default="127.0.0.1"), 4123))
     print("Info sent")
    # print "Altitude / sensor / pressure: " + str(drone.NavData["altitude"][3]) + " / " + str(drone.State[21]) + " / " + str(drone.NavData["pressure_raw"][0])
     print("Megnetometer [X,Y,Z]:         " + str(drone.NavData["magneto"][0]))
